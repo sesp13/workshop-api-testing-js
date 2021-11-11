@@ -1,4 +1,5 @@
 const agent = require('superagent');
+require('dotenv').config();
 const { expect } = require('chai');
 const crypto = require('crypto');
 
@@ -51,7 +52,7 @@ describe('Github GET api tests', () => {
       readmeDownloadUrl = res.body.download_url;
     });
 
-    it('Dowload and analyze README', async () => {
+    it('Download and analyze README', async () => {
       const res = await agent.get(readmeDownloadUrl).set('User-Agent', 'agent');
       expect(res.status).to.equal(200);
       expect(createMD5Hash(res.text)).to.equal(
