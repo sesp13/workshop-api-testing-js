@@ -1,7 +1,6 @@
 const agent = require('superagent');
 require('dotenv').config();
 const { expect } = require('chai');
-// const crypto = require('crypto');
 
 describe('Github PUT api tests', () => {
   it('Follow aperdomo user', async () => {
